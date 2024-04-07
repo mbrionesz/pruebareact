@@ -1,42 +1,80 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Estilos para el detalle de la pizza */
+.pizza-detail-container {
+  display: flex;
+  flex-direction: row; /* Cambiar a 'row' para alinear imagen e información lateralmente */
+  max-width: auto; /* O el ancho máximo que prefieras */
+  margin: auto; /* Centrar el contenedor en la página */
+  margin-top: 70px; /* Ajuste para compensar la altura del navbar fijo */
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.pizza-image {
+  max-width: 100%; /* Ajuste para que la imagen sea responsive */
+  height: auto; /* Ajuste para mantener la proporción de la imagen */
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.pizza-info {
+  flex: 1;
+  padding-left: 20px; /* Agregar espacio entre la imagen y la info */
+}
+
+/* Resto de los estilos... */
+
+/* Estilos para el banner */
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinear elementos a la izquierda */
+  justify-content: center;
+  padding: 20px 40px; /* Añadir padding horizontal para no pegar el texto a los bordes */
+  background-color: #fff;
+  margin-bottom: 20px; /* Asegurar que hay espacio entre el banner y el siguiente contenido */
+  width: 100%;
+}
+
+.banner-title {
+  color: #d9534f;
+  margin-bottom: 0.5rem;
+}
+
+.banner-subtitle {
+  color: #5a5a5a;
+  font-size: 1.1rem;
+}
+
+/* Asegúrate de que el z-index del navbar sea mayor que el de otros elementos */
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* O suficientemente alto para estar por encima de otros elementos */
+  /* Asegúrate de que no haya otros estilos afectando el ancho o posicionamiento */
+}
+
+
+
+@media (max-width: 768px) {
+  .pizza-detail-container {
+    flex-direction: column; /* Apilamiento vertical en pantallas pequeñas */
   }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.pizza-image {
+  max-width: 100%; /* Imagen responsiva */
+  height: auto; /* Mantener la proporción de la imagen */
+  margin-right: 20px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.pizza-info {
+  flex: 1;
+  padding-left: 20px; /* Espacio entre imagen e información */
 }
