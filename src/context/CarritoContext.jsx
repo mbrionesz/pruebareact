@@ -1,4 +1,3 @@
-// Contexto del Carrito (CarritoContext.js)
 import React, { createContext, useState, useContext } from 'react';
 
 const CarritoContext = createContext();
@@ -42,11 +41,18 @@ const disminuirCantidad = (pizzaId) => {
   );
 };
 
+const eliminarDelCarrito = (pizzaId) => {
+  setCarrito((carritoActual) =>
+    carritoActual.filter((item) => item.id !== pizzaId)
+  );
+};
+
   const valorDelContexto = {
     carrito,
     agregarAlCarrito,
     incrementarCantidad,
     disminuirCantidad,
+    eliminarDelCarrito,
   };
 
   return (

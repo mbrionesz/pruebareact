@@ -1,10 +1,9 @@
-/* Estilos para el detalle de la pizza */
 .pizza-detail-container {
   display: flex;
-  flex-direction: row; /* Cambiar a 'row' para alinear imagen e información lateralmente */
-  max-width: auto; /* O el ancho máximo que prefieras */
-  margin: auto; /* Centrar el contenedor en la página */
-  margin-top: 70px; /* Ajuste para compensar la altura del navbar fijo */
+  flex-direction: row;
+  max-width: auto;
+  margin: auto;
+  margin-top: 70px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -12,28 +11,25 @@
 }
 
 .pizza-image {
-  max-width: 100%; /* Ajuste para que la imagen sea responsive */
-  height: auto; /* Ajuste para mantener la proporción de la imagen */
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
 }
 
 .pizza-info {
   flex: 1;
-  padding-left: 20px; /* Agregar espacio entre la imagen y la info */
+  padding-left: 20px;
 }
 
-/* Resto de los estilos... */
-
-/* Estilos para el banner */
 .banner {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Alinear elementos a la izquierda */
+  align-items: center;
   justify-content: center;
-  padding: 20px 40px; /* Añadir padding horizontal para no pegar el texto a los bordes */
+  padding: 20px 40px;
   background-color: #fff;
-  margin-bottom: 20px; /* Asegurar que hay espacio entre el banner y el siguiente contenido */
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -47,66 +43,81 @@
   font-size: 1.1rem;
 }
 
-/* Asegúrate de que el z-index del navbar sea mayor que el de otros elementos */
-body {
-  overflow-x: hidden;
-}
-
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  z-index: 1030; /* O suficientemente alto para estar por encima de otros elementos */
-  /* Asegúrate de que no haya otros estilos afectando el ancho o posicionamiento */
+  z-index: 1030;
 }
 
-
-
-@media (max-width: 768px) {
-  .pizza-detail-container {
-    flex-direction: column; /* Apilamiento vertical en pantallas pequeñas */
-  }
-}
-
-.pizza-image {
-  max-width: 100%; /* Imagen responsiva */
-  height: auto; /* Mantener la proporción de la imagen */
-  margin-right: 20px;
-}
-
-.pizza-info {
-  flex: 1;
-  padding-left: 20px; /* Espacio entre imagen e información */
-}
-
-/* Carrito.css */
-.carrito-img {
-  width: 100px; /* o el tamaño que prefieras */
-  height: auto; /* para mantener la proporción */
-  margin-right: 10px; /* para darle espacio al texto */
-}
-
-.carrito-item {
+/* Estilos para la página de Carrito */
+.carrito-container {
   display: flex;
-  align-items: center; /* para alinear los elementos verticalmente */
-  margin-bottom: 10px; /* espacio entre elementos del carrito */
+  flex-direction: column;
+  max-width: 100%;
+  margin: 80px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .carrito-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.carrito-item div {
+.carrito-img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.cantidad-controles {
   display: flex;
   align-items: center;
 }
 
-.carrito-img {
-  /* Tus estilos para la imagen */
+.cantidad-controles button {
+  margin: 0 5px;
+  padding: 0.25rem 0.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-button {
-  /* Tus estilos para los botones */
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.btn-pago {
+  padding: 10px 20px;
+  background-color: #28a745; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 20px; 
+}
+
+.btn-pago:hover {
+  background-color: #218838;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .carrito-container {
+    max-width: 95%;
+    margin: 1rem auto;
+  }
 }
