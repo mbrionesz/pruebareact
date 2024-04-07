@@ -9,7 +9,7 @@ const DetallePizzas = () => {
 
   useEffect(() => {
     // Realiza la solicitud fetch para obtener los datos del JSON.
-    fetch('/pizzas.json') // Asegúrate de que la URL coincida con la ubicación de tu archivo.
+    fetch('/pizzas.json') // Dirección local, en este caso fue en carpeta public.
       .then((response) => response.json()) // Convierte la respuesta en JSON.
       .then((data) => {
         // Encuentra la pizza específica por su id.
