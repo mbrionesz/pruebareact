@@ -78,3 +78,35 @@ body {
   flex: 1;
   padding-left: 20px; /* Espacio entre imagen e información */
 }
+
+/* Carrito.css */
+.carrito-img {
+  width: 100px; /* o el tamaño que prefieras */
+  height: auto; /* para mantener la proporción */
+  margin-right: 10px; /* para darle espacio al texto */
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center; /* para alinear los elementos verticalmente */
+  margin-bottom: 10px; /* espacio entre elementos del carrito */
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carrito-item div {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-img {
+  /* Tus estilos para la imagen */
+}
+
+button {
+  /* Tus estilos para los botones */
+}

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
+import { useCarrito } from '../context/CarritoContext';
 
 const Catalogo = () => {
   const [pizzas, setPizzas] = useState([]);
+  const { agregarAlCarrito } = useCarrito();
 
   useEffect(() => {
     fetch('/pizzas.json')
@@ -36,7 +38,7 @@ const Catalogo = () => {
                   <span className="price">${pizza.price.toLocaleString()}</span>
                   <div>
                     <Link to={`/pizza/${pizza.id}`} className="btn btn-primary">Ver Más</Link>
-                    <button className="btn btn-warning ml-2">Añadir 🛒</button>
+                    <button className="btn btn-warning ml-2" onClick={() => agregarAlCarrito(pizza)}>Añadir 🛒</button>
                   </div>
                 </div>
               </div>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCarrito } from '../context/CarritoContext';
 
 const DetallePizzas = () => {
   const { id } = useParams(); // Obtiene el id de la URL.
   const [pizza, setPizza] = useState(null); // Estado inicial para la pizza seleccionada.
+  const { agregarAlCarrito } = useCarrito();
 
   useEffect(() => {
     // Realiza la solicitud fetch para obtener los datos del JSON.
@@ -40,7 +42,7 @@ const DetallePizzas = () => {
           ))}
         </ul>
         <p className="price">Precio: ${pizza.price}</p>
-        <button className="btn btn-primary">Añadir 🛒</button>
+        <button className="btn btn-primary" onClick={() => agregarAlCarrito(pizza)}>Añadir 🛒</button>
       </div>
     </div>
   );
